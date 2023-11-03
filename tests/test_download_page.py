@@ -1,3 +1,4 @@
+import pytest
 from pages.download_page import DownLoadPage
 
 @pytest.mark.skip('bug')
