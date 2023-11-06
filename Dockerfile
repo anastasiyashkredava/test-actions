@@ -6,8 +6,8 @@ COPY conftest.py /app/
 COPY requirements.txt /app/
 
 RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-RUN echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-RUN eval "$(/opt/homebrew/bin/brew shellenv)"
+RUN (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /root/.bashrc
+RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 RUN brew install allure
 
 WORKDIR /app
