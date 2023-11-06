@@ -11,6 +11,7 @@ def driver():
     options = webdriver.ChromeOptions()
     prefs = {"download.default_directory": f"{downloads_path}"}
     options.add_experimental_option("prefs", prefs)
+    options.add_argument('--headless')
     chrome_driver = webdriver.Chrome(options=options)
     chrome_driver.maximize_window()
     return chrome_driver
