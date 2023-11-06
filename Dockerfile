@@ -9,6 +9,4 @@ WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-RUN pytest --alluredir=report_results
-
-CMD ["allure", "serve", "/app/report_results", "--port", "9000"]
+CMD ["pytest"]
