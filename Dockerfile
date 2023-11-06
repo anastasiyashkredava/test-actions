@@ -5,11 +5,6 @@ COPY tests /app/
 COPY conftest.py /app/
 COPY requirements.txt /app/
 
-RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-RUN (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /root/.bashrc
-RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-RUN brew install allure
-
 WORKDIR /app
 
 RUN pip install -r requirements.txt
